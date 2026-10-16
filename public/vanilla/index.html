@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Growth Hub | Digital Marketing, SEO & AI Strategies</title>
+  <meta name="description" content="Explore modern digital marketing strategies: SEO, social media, content marketing, PPC, and AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" onclick="navigateTo('home')">
+        <div class="brand-badge">D</div>
+        <div>
+          <span class="brand-title">Digital Growth Hub</span>
+          <span class="brand-sub">Marketing, SEO & AI</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active" onclick="navigateTo('home')">Home</a>
+        <a href="#articles" class="nav-link" onclick="navigateTo('articles')">Articles</a>
+        <a href="#categories" class="nav-link" onclick="navigateTo('categories')">Categories</a>
+        <a href="#about" class="nav-link" onclick="navigateTo('about')">About Us</a>
+        <a href="#contact" class="nav-link" onclick="navigateTo('contact')">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search 10 articles..." oninput="handleSearch(this.value)">
+        </div>
+        <button class="btn btn-primary" onclick="scrollToArticles()">Explore Articles</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tag">Digital Growth Hub · Open Curriculum 2026</span>
+        <h1 class="hero-title">Explore the Future of <span class="highlight">Digital Marketing.</span></h1>
+        <p class="hero-desc">
+          Master the core strategies powering contemporary growth: Search Engine Optimization, social media algorithms, data-driven content marketing, and artificial intelligence in marketing campaigns.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-large" onclick="scrollToArticles()">Browse All 10 Articles &rarr;</button>
+          <button class="btn btn-outline btn-large" onclick="filterByCategory('Artificial Intelligence')">Explore AI in Marketing</button>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>10 Full Guides</strong>
+            <span>400–600 Words Each</span>
+          </div>
+          <div class="stat-item">
+            <strong>Real Case Studies</strong>
+            <span>Local & Enterprise ROI</span>
+          </div>
+          <div class="stat-item">
+            <strong>8 Specialized Fields</strong>
+            <span>SEO, Social, AI, PPC</span>
+          </div>
+          <div class="stat-item">
+            <strong>100% Free</strong>
+            <span>Open Student Curriculum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category & Filter Controls -->
+  <section id="categories" class="filter-section">
+    <div class="filter-container">
+      <div class="category-pills" id="categoryPills">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid & Reader Section -->
+  <section id="articles" class="articles-section">
+    <div class="articles-container">
+      <div class="section-header">
+        <h2 class="section-title">Latest & Featured Articles</h2>
+        <p class="section-subtitle">Curated research and step-by-step frameworks for modern marketers.</p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid" id="articlesGrid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Single Article Reader Modal View -->
+      <div id="articleModal" class="article-modal" style="display: none;">
+        <div class="modal-content">
+          <button class="btn-close" onclick="closeArticleModal()">&larr; Back to Articles</button>
+          <div id="modalArticleBody"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-header">
+        <span class="hero-tag">About Our Mission</span>
+        <h2>Bridging Academic Marketing with Digital Execution</h2>
+        <p>Digital Growth Hub is an open educational initiative designed to equip business administration students and digital entrepreneurs with proven, real-world growth playbooks.</p>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Curriculum Rigor</h3>
+          <p>Every article is formatted with definitions, channel mechanisms, metric benchmarks, and actionable takeaways.</p>
+        </div>
+        <div class="about-card">
+          <h3>Real-World Case Studies</h3>
+          <p>Analysis of real businesses, from local boutique bakeries to high-scale B2B technology leaders.</p>
+        </div>
+        <div class="about-card">
+          <h3>Zero Fluff</h3>
+          <p>No generic buzzwords. We focus on unit economics, conversion funnels, and measurable ROI.</p>
+        </div>
+        <div class="about-card">
+          <h3>Student-First</h3>
+          <p>Completely free and open-source, ideal for college term projects, capstones, and portfolio presentations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <span class="hero-tag">Get in Touch</span>
+        <h2>Connect with the Editorial Desk</h2>
+        <p>Have an inquiry regarding student research, article citations, or project submissions? Reach out to our team.</p>
+        <div class="info-item">
+          <strong>Email:</strong> editor@digitalgrowthhub.edu
+        </div>
+        <div class="info-item">
+          <strong>Location:</strong> Digital Marketing Learning Lab, University Campus
+        </div>
+        <div class="info-item">
+          <strong>Response SLA:</strong> Within 24–48 business hours
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h3>Send an Academic Message</h3>
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label for="contactName">Full Name *</label>
+            <input type="text" id="contactName" required placeholder="e.g. Alex Johnson">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address *</label>
+            <input type="email" id="contactEmail" required placeholder="alex@university.edu">
+          </div>
+          <div class="form-group">
+            <label for="contactTopic">Inquiry Topic</label>
+            <select id="contactTopic">
+              <option>Student Capstone / Research</option>
+              <option>Article Proposal / Submission</option>
+              <option>Faculty Collaboration</option>
+              <option>General Inquiries</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message *</label>
+            <textarea id="contactMessage" rows="4" required placeholder="Enter your inquiry or question here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Message</button>
+          <div id="contactSuccess" class="success-message" style="display: none;">
+            Thank you! Your message has been received. Our team will get back to you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 class="footer-logo">Digital Growth Hub</h4>
+        <p>Modern digital marketing, SEO, social media, and artificial intelligence curriculum for tomorrow's business leaders.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+          <li><a href="#articles" onclick="navigateTo('articles')">Articles</a></li>
+          <li><a href="#categories" onclick="navigateTo('categories')">Categories</a></li>
+          <li><a href="#about" onclick="navigateTo('about')">About Us</a></li>
+          <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Core Topics</h4>
+        <ul>
+          <li><a href="#articles" onclick="filterByCategory('SEO')">Search Engine Optimization</a></li>
+          <li><a href="#articles" onclick="filterByCategory('Social Media')">Social Media Marketing</a></li>
+          <li><a href="#articles" onclick="filterByCategory('Artificial Intelligence')">AI in Marketing</a></li>
+          <li><a href="#articles" onclick="filterByCategory('Email Marketing')">Email Automation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Digital Growth Hub. Published for academic and student research purposes.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

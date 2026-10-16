@@ -1,0 +1,6 @@
+{
+  "name": "Digital Growth Hub",
+  "description": "Modern digital marketing and AI blog platform featuring comprehensive guides on SEO, social media, content strategies, and analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
